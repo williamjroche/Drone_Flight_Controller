@@ -1,6 +1,6 @@
-# Autonomous Drone
+# Drone Flight Controller
 
-This is a GPS-Denied **Drone** project that hopefully in the future uses **computer vision** for flight.  
+This is a **Drone** project with a custom flight controller and power management solution that hopefully in the future uses **computer vision** for flight.  
 The repository contains two main subsystems:
 
 - **Flight Controller**
