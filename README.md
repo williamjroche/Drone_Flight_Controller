@@ -10,8 +10,8 @@ This is an **ongoing project**, and the flight controller is still in developmen
 
 ## Flight Controller
 - Software:
-  - Connects to the IMU and adjusts motor speed for flight stability using PID control  
-  - Implements PID control (a feedback control system that continuously adjusts an output to reach a target value)  
+  - Connects to the IMU and adjusts motor speed for flight stability
+  - Goal: implement PID control (a feedback control system that continuously adjusts an output to reach a target value)  
   - Runs the main motor-control software  
   - Includes a custom transmitter/receiver interface program
 - ATLAS Flight Controller v0.6:
