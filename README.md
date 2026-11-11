@@ -9,6 +9,12 @@ The repository contains two main subsystems:
 This is an **ongoing project**, and the flight controller is still in development. A prototype flight controller can be seen in the photo on the bottom. A more refined PCB implementation of this flight controller is in the works, named **'Atlas Flight Controller'**. This board uses the rp2350A microcontroller from Raspberry Pi, micro-usb power and data, ICM-20948 IMU chip (9-axis), 16MB flash memory (W25Q128JVS), an automatic power switching circuit for use with both external power and micro-usb power. This board will be powered by 5v input (from PDB) during flight which has voltage regulators for smooth and stable power delivery. 
 
 ## Flight Controller
+11/11/26 Update:
+-I've been overhauling the FC design, mainly the power circuit and IMU choice. Instead of the ICM-20948, I've swapped it for the ICM-42688-P (due to its 24 MHz SPI capabilities). Another big change is the board can accept a standard 12v input now instead of 5v. Due to this I needed to add a buck converter for the initial 12v to 5v conversion. Beyond this I replaced the PMOS switching to a diode-OR IC, since the PMOS had a chance of back feeding. Plus diode-OR is the safer bet in terms of power source switching. This way the the status of the power source can be red from GPIO1 now. See updated schematics below,
+<p align='center'>
+  <img width="1253" height="859" alt="image" src="https://github.com/user-attachments/assets/20b45b53-b817-4734-ae54-9bf757df8b4d" />
+  <img width="1125" height="778" alt="image" src="https://github.com/user-attachments/assets/1108e950-d9f3-4714-b3c8-3dc45fa82583" />
+</p>
 - Software:
   - Connects to the IMU and adjusts motor speed for flight stability
   - Goal: implement PID control (a feedback control system that continuously adjusts an output to reach a target value)  
