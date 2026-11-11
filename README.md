@@ -6,7 +6,7 @@ The repository contains two main subsystems:
 - **Flight Controller**
 - **Flight Computer**
 
-This is an **ongoing project**, and the flight controller is still in development. A prototype flight controller can be seen in the photo on the bottom. A more refined PCB implementation of this flight controller is in the works, named **'Atlas Flight Controller'**. This board uses the rp2350A microcontroller from Raspberry Pi, micro-usb power and data, ICM-20948 IMU chip (9-axis), 16MB flash memory (W25Q128JVS), an automatic power switching circuit for use with both external power and micro-usb power. This board will be powered by 5v input (from PDB) during flight which has voltage regulators for smooth and stable power delivery. 
+This is an **ongoing project**, and the flight controller is still in development. A prototype flight controller can be seen in the photo on the bottom. A more refined PCB implementation of this flight controller is in the works, named **'Atlas Flight Controller'**. This board uses the rp2350A microcontroller from Raspberry Pi, micro-usb power and data, ICM-42688-P IMU chip (6-axis), BMP384 barometer, 16MB flash memory (W25Q128JVS), an automatic power switching circuit for use with both external power and micro-usb power. This board will be powered by 12v input (from PDB) during flight which has voltage regulators for smooth and stable power delivery. 
 
 ## Flight Controller
 11/11/26 Update:
@@ -20,21 +20,18 @@ This is an **ongoing project**, and the flight controller is still in developmen
   - Goal: implement PID control (a feedback control system that continuously adjusts an output to reach a target value)  
   - Runs the main motor-control software  
   - Includes a custom transmitter/receiver interface program
-- ATLAS Flight Controller v0.6:
+
+- ATLAS Flight Controller v0.6 (OLD VERSION, new one soon):
 
 <p align='center'>
   <img width="882" height="824" alt="image" src="https://github.com/user-attachments/assets/ea34e43a-18b0-4ca0-bc92-d3d873dd16b6" />
 </p>
 
-This board uses the **RP2350A** microcontroller from Raspberry Pi, micro-usb power and data, **ICM-20948 IMU** chip (9-axis), BPM 384 barometer sensor, 16MB flash memory (W25Q128JVS), an automatic power switching circuit for use with both external power and micro-usb power. This board will be powered by 5v input (from PDB) during flight which has voltage regulators for smooth and stable power delivery. This board is still in development and has not been tested yet. The current design sports a **4-layer** design, with the top and bottom for routing, second layer for GND copper pour, and the third layer for a 3.3v copper pour.
-
-## Flight Computer
-
-- Uses **ROS2** to send commands to the flight controller based on computer-vision input  
-- Contains main computer-vision software  
-- Interfaces directly with the onboard camera  
+This board uses the **RP2350A** microcontroller from Raspberry Pi, micro-usb power and data, **ICM-42688-P IMU** chip (6-axis), BPM 384 barometer sensor, 16MB flash memory (W25Q128JVS), an automatic power switching circuit for use with both external power and micro-usb power. This board will be powered by 12v input (from PDB) during flight which has voltage regulators for smooth and stable power delivery. This board is still in development and has not been tested yet. The current design sports a **4-layer** design, with the top and bottom for routing, second layer for GND copper pour, and the third layer for a 3.3v copper pour.
 
 ## Dual Power Supply PCB
+
+(OLD power design idea, dual power supply PCB no longer needed because of the integrated 12v to 5v conversion. However I'm keeping this in incase anyone is interested in making one. Although I'd recommend using a buck converter for the initial 12v to 5v, then voltage regulation there after.)
 
 <p align='center'>
   <img width="662" height="417" alt="image" src="https://github.com/user-attachments/assets/f2267e4d-806f-4f32-a5cb-de38a164c665" />
